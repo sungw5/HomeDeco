@@ -1,0 +1,24 @@
+/*********************************** HEADER ***********************************/
+header {text-align: center; height: 80px;}
+/* header logo (left) */
+header h1 {position: absolute; left: 50px; top: 0;}
+header h1 a {display: block; width: 140px; height: 80px; display: flex; align-items: center;}
+
+/* header menu */
+header .menu li {display: inline-block;}
+header .menu li a {display: block; height: 80px; padding: 0 35px; font-size: 17px; color: #333; line-height: 80px;} /* To make vertically center: set line-height equal to the height */
+header .menu li a:hover {color: #2d5b79; font-weight: bold;}
+/* header menu hover underline */
+header .menu li a span {position: relative;} /*밑줄의 기준(a::after)*/
+header .menu li a:hover span::after {content: ""; position: absolute; left: 0; bottom: -9px; 
+    width: 100%; display: block; height: 1px; background: #2d5b79 ;}
+
+/* header sidelinks (right) */
+header .navlinks {position: absolute; right: 50px; top: 0;}  
+header .navlinks li {position: relative; float: left;}
+header .navlinks li a {display: block; height: 80px; line-height: 80px; padding: 0 10px;}
+/* little bar in the header sidelink  */
+header .navlinks li::before {content: ""; position: absolute; left: 0; top: 50%; width: 1px; height: 7px; 
+    background-color: #ccc; transform: translateY(-50%);}
+header .navlinks li:first-child::before {display: none;}
+header .navlinks li:last-child a {padding-right: 0;}
