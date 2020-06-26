@@ -59,7 +59,31 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 .visuals .contents .slide {background: url(../assets/bg_main02.jpg) no-repeat center; 
     color: #fff; font-size: 23px;} 
 
+/* visuals slide texts + icon */
+ /* 아이콘은 before로도 구현가능  */
 .visuals .contents .slide > div {position: relative;}
 .visuals .contents .slide .slide-icon {position: absolute; top: 250px; left: 50%; width: 118px; height: 92px; transform: translateX(-50%);
     color:transparent; background: url(../assets/sp_com.png) no-repeat; background-position: -2px -260px;}
 .visuals .contents .slide .txt {position: absolute; top: 365px; left: 50%; transform: translateX(-50%)}
+
+/*********************************** PRODUCT CATEGORY ***********************************/
+.product a {display: block; color: #001829;}
+.product a:hover {color: #2d5b79; font-weight: bold;}
+.product a::before {content: ""; display: block; width: 64px; height: 52px; margin: 0 0 26px; /*bottom margin for gap b/t icon and text*/
+    background: url(../assets/sp_com.png) no-repeat;}
+.product ul {text-align: center; padding: 46px 0 41px;} /* positioning icons to the center */
+.product li {display: inline-block; text-align: center; padding: 0 55px;}
+/* fetching icons from the sp img */
+.product li:nth-child(1) a::before {background-position: -3px -118px;}
+.product li:nth-child(2) a::before {background-position: -75px -118px;}
+.product li:nth-child(3) a::before {background-position: -148px -118px;}
+.product li:nth-child(4) a::before {background-position: -219px -118px;}
+.product li:nth-child(5) a::before {background-position: -293px -118px;}
+.product li:nth-child(6) a::before {background-position: -365px -118px;}
+/* icon hover effect */
+.product li:nth-child(1) a:hover::before {background-position: -3px -184px; transform: scale(1.03);}
+.product li:nth-child(2) a:hover::before {background-position: -75px -184px; transform: scale(1.03);} 
+.product li:nth-child(3) a:hover::before {background-position: -148px -184px; transform: scale(1.03);}
+.product li:nth-child(4) a:hover::before {background-position: -219px -184px; transform: scale(1.03);}
+.product li:nth-child(5) a:hover::before {background-position: -293px -184px; transform: scale(1.03);}
+.product li:nth-child(6) a:hover::before {background-position: -365px -184px; transform: scale(1.03);}
