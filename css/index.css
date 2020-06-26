@@ -1,5 +1,7 @@
+
+body {min-width: 1280px;}
 /*********************************** HEADER ***********************************/
-header {text-align: center; height: 80px;}
+header {position: relative; text-align: center; height: 80px;} /*relative position for navlinks*/
 /* header logo (left) */
 header h1 {position: absolute; left: 50px; top: 0;}
 header h1 a {display: block; width: 140px; height: 80px; display: flex; align-items: center;}
