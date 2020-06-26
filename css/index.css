@@ -54,4 +54,10 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 
 /* visuals slide background img */
 .visuals .contents > div {height: 640px;}
-.visuals .contents .slide {background: url(../assets/bg_main02.jpg) no-repeat center;}
+.visuals .contents .slide {background: url(../assets/bg_main02.jpg) no-repeat center; 
+    color: #fff; font-size: 23px;} 
+
+.visuals .contents .slide > div {position: relative;}
+.visuals .contents .slide .slide-icon {position: absolute; top: 250px; left: 50%; width: 118px; height: 92px; transform: translateX(-50%);
+    color:transparent; background: url(../assets/sp_com.png) no-repeat; background-position: -2px -260px;}
+.visuals .contents .slide .txt {position: absolute; top: 365px; left: 50%; transform: translateX(-50%)}
