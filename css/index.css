@@ -27,32 +27,34 @@ header .navlinks li:last-child a {padding-right: 0;}
 
 /*********************************** VISUALS ***********************************/
 .visuals {position: relative; padding: 0 50px;}
+
+/***** Slide buttons *****/
 /* visuals prev, next */
-.visuals .prev,
-.visuals .next {position: absolute; display: block; top: 50%; transform: translateY(-50%);
+.slide-button .prev,
+.slide-button .next {position: absolute; display: block; top: 50%; transform: translateY(-50%);
 width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color: transparent;}
-.visuals .prev {left: 82px; background-position: -128px -60px;}
-.visuals .next {right: 82px; background-position: -158px -60px;} 
+.slide-button .prev {left: 82px; background-position: -128px -60px;}
+.slide-button .next {right: 82px; background-position: -158px -60px;} 
 
 /* slide controls 몇개를 더 넣어도 가운데 정렬로 가게 만들어야함 */ 
 /* 오른쪽을 (play-pause 버튼) 고정으로 안움직이게. 나머지는 width 100%줘서 자동정렬하게 */
-.visuals .controls {position: absolute; left: 0; bottom: 55px; width: 100%; text-align: center;}
-.visuals .controls .constrols-container {position: relative; display: inline-block; 
+.slide-button .controls {position: absolute; left: 0; bottom: 55px; width: 100%; text-align: center;}
+.slide-button .controls .constrols-container {position: relative; display: inline-block; 
     padding: 0 45px 0 0;}
-.visuals .controls .constrols-container a {color: transparent;}
+.slide-button .controls .constrols-container a {color: transparent;}
 /* play-pause button */
-.visuals .controls .constrols-container .play-pause {position: absolute; right: 0;}
-.visuals .controls .constrols-container .play-pause a {display: inline-block; width: 8px; height: 9px; margin:0 0 0 7px ;
+.slide-button .controls .constrols-container .play-pause {position: absolute; right: 0;}
+.slide-button .controls .constrols-container .play-pause a {display: inline-block; width: 8px; height: 9px; margin:0 0 0 7px ;
     overflow: hidden; background: url(../assets/sp_com.png) no-repeat; opacity: 0.5;}
-.visuals .controls .constrols-container .play-pause a.on {opacity: 1;}
-.visuals .controls .constrols-container .play-pause a.play {background-position: -108px -72px;}
-.visuals .controls .constrols-container .play-pause a.pause {background-position: -108px -60px;}
+.slide-button .controls .constrols-container .play-pause a.on {opacity: 1;}
+.slide-button .controls .constrols-container .play-pause a.play {background-position: -108px -72px;}
+.slide-button .controls .constrols-container .play-pause a.pause {background-position: -108px -60px;}
 /* slide button bars */
-.visuals .controls .constrols-container ul {display: inline-block; font-size: 0; position: relative; top:-7px; }
-.visuals .controls .constrols-container li {display: inline-block; padding: 0 3px;}
-.visuals .controls .constrols-container li a {display: block; width: 50px; height: 3px; 
+.slide-button .controls .constrols-container ul {display: inline-block; font-size: 0; position: relative; top:-7px; }
+.slide-button .controls .constrols-container li {display: inline-block; padding: 0 3px;}
+.slide-button .controls .constrols-container li a {display: block; width: 50px; height: 3px; 
     background: rgba(255, 255, 255, 0.5); border: none;}
-.visuals .controls .constrols-container li.on a {background: #fff;}
+.slide-button .controls .constrols-container li.on a {background: #fff;}
 
 /* visuals slide background img */
 .visuals .contents > div {height: 640px;}
