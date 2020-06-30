@@ -89,3 +89,37 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 .product li:nth-child(4) a:hover::before {background-position: -219px -184px; transform: scale(1.03);}
 .product li:nth-child(5) a:hover::before {background-position: -293px -184px; transform: scale(1.03);}
 .product li:nth-child(6) a:hover::before {background-position: -365px -184px; transform: scale(1.03);}
+
+
+/*********************************** MAGAZINE SECTION ***********************************/
+
+.magazine {position: relative; background: #dfd9d1 ; height: 670px; overflow: hidden;}
+.magazine h2 {font-size: 28px; color: #000; text-align: center; padding: 50px 0 16px; line-height: 100%;}
+.magazine p {text-align: center; font-size: 14px; color: #3a3b36; line-height: 100%;}
+
+/* slide control for magazine */
+.magazine.slide-button .controls {bottom: 48px;}
+.magazine.slide-button .prev {left: 50%; margin: 26px 0 0 -640px;} /*positioning center*/
+.magazine.slide-button .next {right: 50%; margin: 26px -640px 0 0;} /*positioning center*/
+
+/* slide left box */
+.magazine .slide-box >div {position: absolute; left: 50%; top: 150px; transform: translate(-50%, 0); 
+    width: 1180px; height: 430px; } 
+.magazine .slide-box >div:nth-child(1) {margin-left: -1280px;} 
+.magazine .slide-box >div:nth-child(3) {margin-left: 1280px;} 
+.magazine .slide-box .left-box {position: relative; float: left; width: 800px; height: 430px; overflow: hidden;}
+.magazine .slide-box .left-box img {width: 100%; hei ght: 100%;}
+.magazine .slide-box .left-box div {position: absolute; width: 200px; height: 100%; top: 0; right: 0; 
+    padding: 40px 27px 0; background: rgba(0,0,0,0.5); box-sizing: border-box;}
+.magazine .slide-box .left-box div h3 {color: #fff; font-size: 18px; line-height: 32px;}
+.magazine .slide-box .left-box div h3 span {display: block; font-weight: normal;}
+.magazine .slide-box .left-box div p {font-size: 14px; color: #fff; padding:9px 0 0; text-align: left; line-height: 24px;}
+.magazine .slide-box .left-box div a {position: absolute; right: 20px; bottom: 40px; display: block; width: 160px; height: 45px; border:1px solid #fff; 
+    font-size: 16px; color: #fff; text-align: center; line-height: 45px;}
+/* slide right box */
+.magazine .slide-box .right-box {float: right; width: 380px; height: 430px; 
+    padding:20px 20px 0; background: #fff; box-sizing: border-box;}
+.magazine .slide-box .right-box li {padding: 0 0 20px;}
+.magazine .slide-box .right-box li a {position: relative; display: flex; align-items: center; height: 82px; padding: 0 0 0 100px; font-size: 16px; color: #333;}
+.magazine .slide-box .right-box li a img {position: absolute; left:0; top:0;}
+.magazine .slide-box .right-box li a strong {display: block; font-size: 13px; color: #000;}
