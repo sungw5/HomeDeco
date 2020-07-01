@@ -125,7 +125,7 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 .magazine .slide-box .right-box li a strong {display: block; font-size: 13px; color: #000;}
 
 
-/*********************************** NOTICE SECTION ***********************************/
+/*********************************** NOTICE - SEARCH SECTION ***********************************/
 
 .notice > div {width: 1180px; margin: 0 auto; padding: 55px 0; }
 .notice > div .notice-top > ul {float: left;}
@@ -152,5 +152,31 @@ background: #f2f0ed; padding: 36px 20px 0; box-sizing: border-box;}
 .notice > div .notice-top > div select,
 .notice > div .notice-top > div input {width: 100%; height: 45px; border: none; padding: 0; text-indent: 20px;}
 .notice > div .notice-top > div input::-webkit-input-placeholder {color: #949394; font-size: 14px;}
-.notice > div .notice-top > div a {display: block; height: 45px; line-height: 45px; text-align: center; 
-    background: #2d5b79; color: #fff; font-size: 15px; margin-top: 20px;} 
+.notice > div .notice-top > div a {display: block; height: 45px; line-height: 45px; text-align: center; background: #2d5b79; color: #fff; font-size: 15px; margin-top: 20px;} 
+
+
+
+/*********************************** NOTICE - NEWS SECTION ***********************************/
+.notice article {padding-top: 20px;}
+/* left-notice + common elements */
+.notice article > div {position: relative; float: left; width: 580px; background: #f2f0ed;}
+.notice article > div h2 {height: 77px; line-height: 77px; font-size: 24px; color: #2d5b79; text-align: center; border-bottom: 1px solid #fff;}
+/* more button */
+.notice article > div .more {position: absolute; right: 23px; top: 24px; width: 30px; height: 30px; background: url(../assets/sp_com.png) -196px -62px no-repeat #fff; border-radius: 30px; color: transparent;}
+
+.notice article > div a {font-size: 16px; color: #424241;}
+.notice article > div a p {font-size: 12px; color: #979797;}
+
+/* left-notice */
+.notice article > div.left-notice ul li {float: left; width: 50%; padding: 35px; box-sizing: border-box; border-left: 1px solid #fff ;}
+.notice article > div.left-notice ul li:first-child {border: none;}
+.notice article > div.left-notice ul li span {display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 100%;}
+.notice article > div.left-notice ul li p {padding: 24px 0 16px; line-height: 100%;}
+.notice article > div.left-notice ul li div {line-height: 21px;}
+
+/* right-news */
+.notice article > div.right-news {float: right;}
+.notice article > div.right-news ul li {position: relative; border-bottom: 1px solid #fff;}
+.notice article > div.right-news ul li:last-child {border: none;}
+.notice article > div.right-news ul li a {display: block; width: 400px; height: 60px; line-height: 60px; text-indent: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.notice article > div.right-news ul li a p {position: absolute; right: 15px; top: 0;}
