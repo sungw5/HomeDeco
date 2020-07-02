@@ -51,7 +51,7 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 .slide-button .controls .constrols-container ul {display: inline-block; font-size: 0; position: relative; top:-7px; z-index: 5;}
 .slide-button .controls .constrols-container li {display: inline-block; padding: 0 3px;}
 .slide-button .controls .constrols-container li a {display: block; width: 50px; height: 3px; background: rgba(255, 255, 255, 0.5); border: none;}
-.slide-button .controls .constrols-container li.on a {background: #fff;}
+.slide-button .controls .constrols-container ul li.bar-on {background: #fff;}
 
 /* visuals slide background img */
 .visuals .contents > div {height: 640px;}
