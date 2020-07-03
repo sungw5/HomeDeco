@@ -56,7 +56,7 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 /* visuals slide background img */
 .visuals .contents > div {height: 640px;}
 .visuals .contents .slide {color: #fff; font-size: 23px; position: relative;} 
-.visuals .contents .slide img {width: 100%; height: 100%; position: absolute; top: 0; z-index: -1; opacity: 0; transition: opacity .5s ease-in-out;}
+.visuals .contents .slide img {width: 100%; height: 100%; position: absolute; top: 0; z-index: -1; opacity: 0; transition: opacity .7s ease-in-out;}
 
 
 

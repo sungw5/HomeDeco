@@ -4,6 +4,12 @@
 const firstSlide = document.querySelector(
   ".visuals .contents .slide img:nth-child(2)"
 );
+const secondSlide = document.querySelector(
+  ".visuals .contents .slide img:nth-child(3)"
+);
+const thirdSlide = document.querySelector(
+  ".visuals .contents .slide img:nth-child(4)"
+);
 const fourthSlide = document.querySelector(
   ".visuals .contents .slide img:nth-child(5)"
 );
@@ -47,6 +53,30 @@ function nextSlideBar() {
     nextSlideBar.classList.add(BAR_ON);
   } else {
     firstSlideBar.classList.add(BAR_ON);
+  }
+}
+
+function pickSlideBar(e) {
+  let currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+  let currentSlideBar = document.querySelector(`.${BAR_ON}`);
+  currentSlideBar.classList.remove(BAR_ON);
+  e.currentTarget.classList.add(BAR_ON);
+  // match slide bar with image
+  if (e.currentTarget === firstSlideBar) {
+    currentSlide.classList.remove(SHOWING_CLASS);
+    firstSlide.classList.add(SHOWING_CLASS);
+  }
+  if (e.currentTarget === secondSlideBar) {
+    currentSlide.classList.remove(SHOWING_CLASS);
+    secondSlide.classList.add(SHOWING_CLASS);
+  }
+  if (e.currentTarget === thirdSlideBar) {
+    currentSlide.classList.remove(SHOWING_CLASS);
+    thirdSlide.classList.add(SHOWING_CLASS);
+  }
+  if (e.currentTarget === fourthSlideBar) {
+    currentSlide.classList.remove(SHOWING_CLASS);
+    fourthSlide.classList.add(SHOWING_CLASS);
   }
 }
 
@@ -104,5 +134,9 @@ function init() {
   setInterval(slide, 6000); // 6sec
   prevBtn.addEventListener("click", prev);
   nextBtn.addEventListener("click", next);
+  firstSlideBar.addEventListener("click", pickSlideBar);
+  secondSlideBar.addEventListener("click", pickSlideBar);
+  thirdSlideBar.addEventListener("click", pickSlideBar);
+  fourthSlideBar.addEventListener("click", pickSlideBar);
 }
 init();
