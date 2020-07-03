@@ -44,7 +44,7 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 /* play-pause button */
 .slide-button .controls .constrols-container .play-pause {position: absolute; right: 0; z-index: 5;}
 .slide-button .controls .constrols-container .play-pause a {display: inline-block; width: 8px; height: 9px; margin:0 0 0 7px ; overflow: hidden; background: url(../assets/sp_com.png) no-repeat; opacity: 0.5;}
-.slide-button .controls .constrols-container .play-pause a.on {opacity: 1;}
+.slide-button .controls .constrols-container .play-pause a.p-on {opacity: 1;}
 .slide-button .controls .constrols-container .play-pause a.play {background-position: -108px -72px;}
 .slide-button .controls .constrols-container .play-pause a.pause {background-position: -108px -60px;}
 /* slide button bars */

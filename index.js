@@ -14,8 +14,10 @@ const fourthSlide = document.querySelector(
   ".visuals .contents .slide img:nth-child(5)"
 );
 
+let initialTime = 3000;
 const SHOWING_CLASS = "showing";
 const BAR_ON = "bar-on";
+const PlAYPAUSE_ON = "p-on";
 // Slide Buttons
 const prevBtn = document.querySelector(".slide-button .prev");
 const nextBtn = document.querySelector(".slide-button .next");
@@ -32,6 +34,13 @@ const thirdSlideBar = document.querySelector(
 );
 const fourthSlideBar = document.querySelector(
   ".slide-button .controls .constrols-container li:nth-child(4)"
+);
+
+const playBtn = document.querySelector(
+  ".slide-button .controls .constrols-container .play-pause .play"
+);
+const pauseBtn = document.querySelector(
+  ".slide-button .controls .constrols-container .play-pause .pause"
 );
 
 //////////////////// Functions ////////////////////
@@ -128,15 +137,38 @@ function next() {
     firstSlide.classList.add(SHOWING_CLASS);
   }
 }
+// start the interval
+let slideInterval = setInterval(slide, initialTime);
+
+function playpause(e) {
+  let currentPlayPauseBtn = document.querySelector(`.${PlAYPAUSE_ON}`);
+  //click -> on
+  if (e) {
+    currentPlayPauseBtn.classList.remove(PlAYPAUSE_ON);
+    e.currentTarget.classList.add(PlAYPAUSE_ON);
+  }
+  // play the slide
+  if (playBtn.classList.contains(PlAYPAUSE_ON)) {
+    setInterval(slide, initialTime);
+  }
+  // stop the slide
+  if (pauseBtn.classList.contains(PlAYPAUSE_ON)) {
+    clearInterval(slideInterval);
+  }
+}
 
 function init() {
   slide();
-  setInterval(slide, 6000); // 6sec
+  // prev, next button eventListener
   prevBtn.addEventListener("click", prev);
   nextBtn.addEventListener("click", next);
+  // slide bar picker eventListener
   firstSlideBar.addEventListener("click", pickSlideBar);
   secondSlideBar.addEventListener("click", pickSlideBar);
   thirdSlideBar.addEventListener("click", pickSlideBar);
   fourthSlideBar.addEventListener("click", pickSlideBar);
+  // play, pause button eventListener
+  playBtn.addEventListener("click", playpause);
+  pauseBtn.addEventListener("click", playpause);
 }
 init();
