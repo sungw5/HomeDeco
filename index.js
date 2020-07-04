@@ -165,7 +165,7 @@ function playpause(e) {
 //////////////////// Global Variables ////////////////////
 const magazineSlides = document.querySelector(".magazine");
 const magazineSlide = document.querySelectorAll(".magazine .slide-box > div");
-let currentIdx = 0;
+let currentIdx = 2; //default
 const slideCount = magazineSlide.length; //3
 // Magazine buttons :
 //                  prevBtn[1]
@@ -173,6 +173,34 @@ const slideCount = magazineSlide.length; //3
 
 const slideWidth = 1180;
 const slideMargin = 100;
+
+function moveSlide(index) {
+  for (let i = 0; i < magazineSlide.length; i++) {
+    if (index == 1)
+      magazineSlide[i].style.transform = "translate(" + 58.48 + "%," + 0 + ")"; //왼쪽
+    if (index == 2)
+      magazineSlide[i].style.transform = "translate(" + -50 + "%," + 0 + ")"; //중간 (기본)
+    if (index == 3)
+      magazineSlide[i].style.transform =
+        "translate(" + -158.48 + "%," + 0 + ")"; //오른쪽
+  }
+  currentIdx = index;
+}
+
+function nextMagazineSlide() {
+  if (currentIdx <= 3) moveSlide(currentIdx + 1);
+  else {
+    currentIdx = 3;
+  }
+}
+function prevMagazineSlide() {
+  if (currentIdx >= 1) moveSlide(currentIdx - 1);
+  else {
+    currentIdx = 1;
+  }
+}
+
+//////////////////// Functions ////////////////////
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////// Main  ///////////////////////////////
@@ -192,5 +220,9 @@ function init() {
   // play, pause button eventListener
   playBtn[0].addEventListener("click", playpause);
   pauseBtn[0].addEventListener("click", playpause);
+
+  //------------------ magazine slide ------------------//
+  prevBtn[1].addEventListener("click", prevMagazineSlide);
+  nextBtn[1].addEventListener("click", nextMagazineSlide);
 }
 init();
