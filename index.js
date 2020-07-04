@@ -163,18 +163,27 @@ function playpause(e) {
 ////////////////////////////////////////////////////////////////////
 
 //////////////////// Global Variables ////////////////////
-const magazineSlides = document.querySelector(".magazine");
 const magazineSlide = document.querySelectorAll(".magazine .slide-box > div");
 let currentIdx = 2; //default
 const slideCount = magazineSlide.length; //3
 // Magazine buttons :
 //                  prevBtn[1]
 //                  nextBtn[1]
-
 const slideWidth = 1180;
 const slideMargin = 100;
 
+const M_BAR_ON = "mbar-on";
+const MPLAYPAUSE_ON = "mp-on";
+
+const nthMagazineSlideBar = document.querySelectorAll(
+  ".magazine .controls .constrols-container li"
+);
+const magazineTime = initialTime + 3000;
+//////////////////// Functions ////////////////////
+
 function moveSlide(index) {
+  let currentSlideBar = document.querySelector(`.${M_BAR_ON}`);
+  //for all slides
   for (let i = 0; i < magazineSlide.length; i++) {
     if (index == 1)
       magazineSlide[i].style.transform = "translate(" + 58.48 + "%," + 0 + ")"; //왼쪽
@@ -184,45 +193,84 @@ function moveSlide(index) {
       magazineSlide[i].style.transform =
         "translate(" + -158.48 + "%," + 0 + ")"; //오른쪽
   }
-  currentIdx = index;
+  currentIdx = index; // update current index
+  // slide bar update
+  currentSlideBar.classList.remove(M_BAR_ON);
+  nthMagazineSlideBar[currentIdx - 1].classList.add(M_BAR_ON);
+}
+
+function prevMagazineSlide() {
+  if (currentIdx > 1) moveSlide(currentIdx - 1);
+  else {
+    // go to last slide
+    moveSlide(slideCount);
+  }
 }
 
 function nextMagazineSlide() {
-  if (currentIdx <= 3) moveSlide(currentIdx + 1);
+  if (currentIdx < slideCount) moveSlide(currentIdx + 1);
   else {
-    currentIdx = 3;
-  }
-}
-function prevMagazineSlide() {
-  if (currentIdx >= 1) moveSlide(currentIdx - 1);
-  else {
-    currentIdx = 1;
+    // go back to first slide
+    moveSlide(1);
   }
 }
 
-//////////////////// Functions ////////////////////
+function pickMagazineSlideBar(e) {
+  let currentSlideBar = document.querySelector(`.${M_BAR_ON}`);
+  currentSlideBar.classList.remove(M_BAR_ON);
+  e.currentTarget.classList.add(M_BAR_ON);
+
+  if (e.currentTarget === nthMagazineSlideBar[0]) moveSlide(1);
+  if (e.currentTarget === nthMagazineSlideBar[1]) moveSlide(2);
+  if (e.currentTarget === nthMagazineSlideBar[2]) moveSlide(3);
+}
+
+// start the interval (magazine)
+let magazineSlideInterval = setInterval(nextMagazineSlide, magazineTime);
+
+function magazinePlay(e) {
+  let currentPlayPauseBtn = document.querySelector(`.${MPLAYPAUSE_ON}`);
+  if (e) {
+    currentPlayPauseBtn.classList.remove(MPLAYPAUSE_ON);
+    e.currentTarget.classList.add(MPLAYPAUSE_ON);
+  }
+  // play the slide
+  if (playBtn[1].classList.contains(MPLAYPAUSE_ON)) {
+    setInterval(nextMagazineSlide, magazineTime);
+  }
+  // stop the slide
+  if (pauseBtn[1].classList.contains(MPLAYPAUSE_ON)) {
+    clearInterval(magazineSlideInterval);
+  }
+}
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////// Main  ///////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
 function init() {
-  //-------------------- main slide --------------------//
+  //------------------------ main slide --------------------------//
   mainSlide();
   // prev, next button eventListener
   prevBtn[0].addEventListener("click", prev);
   nextBtn[0].addEventListener("click", next);
   // slide bar picker eventListener
-  nthSlideBar[0].addEventListener("click", pickSlideBar);
-  nthSlideBar[1].addEventListener("click", pickSlideBar);
-  nthSlideBar[2].addEventListener("click", pickSlideBar);
-  nthSlideBar[3].addEventListener("click", pickSlideBar);
+  for (let i = 0; i < nthSlideBar.length; i++) {
+    nthSlideBar[i].addEventListener("click", pickSlideBar);
+  }
+
   // play, pause button eventListener
   playBtn[0].addEventListener("click", playpause);
   pauseBtn[0].addEventListener("click", playpause);
 
-  //------------------ magazine slide ------------------//
+  //---------------------- magazine slide -----------------------//
   prevBtn[1].addEventListener("click", prevMagazineSlide);
   nextBtn[1].addEventListener("click", nextMagazineSlide);
+  // play, pause button eventListener
+  playBtn[1].addEventListener("click", magazinePlay);
+  pauseBtn[1].addEventListener("click", magazinePlay);
+  for (let i = 0; i < nthMagazineSlideBar.length; i++) {
+    nthMagazineSlideBar[i].addEventListener("click", pickMagazineSlideBar);
+  }
 }
 init();
