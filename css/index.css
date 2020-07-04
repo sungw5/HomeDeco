@@ -1,9 +1,11 @@
+
 body {min-width: 1280px;}
 /*********************************** HEADER ***********************************/
 header {position: relative; text-align: center; height: 80px;} /*relative position for navlinks*/
 /* header logo (left) */
-header h1 {position: absolute; left: 50px; top: 0;}
-header h1 a {display: block; width: 140px; height: 80px; display: flex; align-items: center;}
+header h1 {position: absolute; left: 50px; top: 0; }
+header h1 a {display: block; width: 170px; height: 80px; display: flex; align-items: center;}
+.fa-home {color: rgb(34, 34, 116);}
 
 /* header menu */
 header .menu li {display: inline-block;}
@@ -178,7 +180,7 @@ background: #f2f0ed; padding: 36px 20px 0; box-sizing: border-box;}
 .notice article > div.left-notice ul li div {line-height: 21px;}
 
 /* right-news */
-.notice article > div.right-news {float: right;}
+.notice article > div.right-news {float: right; }
 .notice article > div.right-news ul li {position: relative; border-bottom: 1px solid #fff;}
 .notice article > div.right-news ul li:last-child {border: none;}
 .notice article > div.right-news ul li a {display: block; width: 400px; height: 60px; line-height: 60px; text-indent: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
@@ -207,7 +209,8 @@ footer .footer-top > div div select {width: 200px; height: 44px; padding: 0 0 0 
 
 /***** footer bottom *****/
 footer .footer-bottom {background: #4c5459; padding: 40px 0 44px; text-align: center; color: #fff;}
-footer .footer-bottom p {display: inline-block; width: 100px; height: 40px; font-size: 17px; font-weight: bold;} 
+footer .footer-bottom p {display: inline-block; width: 140px; height: 40px; font-size: 17px; font-weight: bold;} 
+footer .fa-home {color: rgb(160, 159, 212);}
 footer .footer-bottom ul {padding: 14px 0 14px;}
 footer .footer-bottom ul li {position: relative; display: inline-block; font-size: 14px; padding: 0 10px;} 
 footer .footer-bottom ul li::after {content: ""; position: absolute; width: 1px; height: 8px; right: 0; top: 50%; margin-top: -4px; background: #70767a; }
