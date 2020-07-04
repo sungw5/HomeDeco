@@ -18,7 +18,7 @@ const fourthSlide = document.querySelector(
   ".visuals .contents .slide img:nth-child(5)"
 );
 
-let initialTime = 3000;
+let initialTime = 4000;
 const SHOWING_CLASS = "showing";
 const BAR_ON = "bar-on";
 const PlAYPAUSE_ON = "p-on";
@@ -27,6 +27,12 @@ const PlAYPAUSE_ON = "p-on";
 const nthSlideBar = document.querySelectorAll(
   ".visuals .controls .constrols-container li"
 );
+
+const slideIcon = document.querySelector(
+  ".visuals .contents .slide .slide-icon"
+);
+
+const slideText = document.querySelector(".visuals .contents .slide .txt");
 
 //@@@@@@@@@@@@@@ Sharing elements (main,magazine 공통 부분) @@@@@@@@@@@@@@//
 // Slide Buttons
@@ -45,6 +51,28 @@ const pauseBtn = document.querySelectorAll(
 //@@@@@@@@@@@@@@ Sharing elements (main,magazine 공통 부분) @@@@@@@@@@@@@@//
 
 //////////////////// Functions ////////////////////
+function iconChange() {
+  if (firstSlide.classList.contains(SHOWING_CLASS)) {
+    slideIcon.style.backgroundPosition = "-2px -260px";
+    slideText.innerHTML = "Eco-Friendly <strong>Flooring</strong>";
+  }
+
+  if (secondSlide.classList.contains(SHOWING_CLASS)) {
+    slideIcon.style.backgroundPosition = "-127px -260px";
+    slideText.innerHTML = "Beautiful Filling <strong>Walls</strong>";
+  }
+
+  if (thirdSlide.classList.contains(SHOWING_CLASS)) {
+    slideIcon.style.backgroundPosition = "-257px -260px";
+    slideText.innerHTML = "Happy Opening <strong>Doors<strong>";
+  }
+
+  if (fourthSlide.classList.contains(SHOWING_CLASS)) {
+    slideIcon.style.backgroundPosition = "-380px -260px";
+    slideText.innerHTML = "Life Worth <strong>Furnitures<strong>";
+  }
+}
+
 function prevSlideBar() {
   let currentSlideBar = document.querySelector(`.${BAR_ON}`);
   currentSlideBar.classList.remove(BAR_ON);
@@ -88,6 +116,7 @@ function pickSlideBar(e) {
     currentSlide.classList.remove(SHOWING_CLASS);
     fourthSlide.classList.add(SHOWING_CLASS);
   }
+  iconChange();
 }
 
 function mainSlide() {
@@ -108,6 +137,7 @@ function mainSlide() {
       firstSlide.classList.add(SHOWING_CLASS);
       nthSlideBar[0].classList.add(BAR_ON);
     }
+    iconChange();
   }
   // if there's no elements with showing_class, then add one
   else {
@@ -126,6 +156,7 @@ function prev() {
   } else {
     fourthSlide.classList.add(SHOWING_CLASS);
   }
+  iconChange();
 }
 function next() {
   let currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
@@ -137,6 +168,7 @@ function next() {
   } else {
     firstSlide.classList.add(SHOWING_CLASS);
   }
+  iconChange();
 }
 // start the interval
 let slideInterval = setInterval(mainSlide, initialTime);

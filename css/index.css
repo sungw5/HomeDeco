@@ -62,14 +62,13 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 .visuals .contents .slide {color: #fff; font-size: 23px; position: relative;} 
 .visuals .contents .slide img {width: 100%; height: 100%; position: absolute; top: 0; z-index: -1; opacity: 0; transition: opacity .7s ease-in-out;}
 
-
-
 .visuals .contents .slide img.showing {opacity: 1;}
 
 /* visuals slide texts + icon */
  /* 아이콘은 before로도 구현가능  */
 .visuals .contents .slide > div {position: relative;}
-.visuals .contents .slide .slide-icon {position: absolute; top: 250px; left: 50%; width: 118px; height: 92px; transform: translateX(-50%); color:transparent; background: url(../assets/sp_com.png) no-repeat; background-position: -2px -260px;}
+.visuals .contents .slide .slide-icon {position: absolute; top: 250px; left: 50%; width: 118px; height: 97px; transform: translateX(-50%); color:transparent; background: url(../assets/sp_com.png) no-repeat; background-position: -2px -260px; opacity: 1; transition: opacity .7s ease-in-out;}
+
 .visuals .contents .slide .txt {position: absolute; top: 365px; left: 50%; transform: translateX(-50%)}
 
 /*********************************** PRODUCT CATEGORY ***********************************/
@@ -108,7 +107,7 @@ width:25px; height: 47px; background: url(../assets/sp_com.png) no-repeat; color
 /* slide left box */
 /* .magazine .slide-box {display: inline-block; width: 1556px; height: 496px;}  */
 /* .magazine .slide-box {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); width: 100%; height: 100%;} */
-.magazine .slide-box > div {position: absolute; top: 150px; left: 50%; transform: translate(-50%, 0); width: 1180px; height: 430px; transition: 0.5s ease-in-out;} 
+.magazine .slide-box > div {position: absolute; top: 150px; left: 50%; transform: translate(-50%, 0); width: 1180px; height: 430px; transition: 0.7s ease-in-out;} 
 .magazine .slide-box > div:nth-child(1) {margin-left: -1280px;} 
 .magazine .slide-box > div:nth-child(3) {margin-left: 1280px;} 
 .magazine .slide-box .left-box {position: relative; float: left; width: 800px; height: 430px; overflow: hidden;}
